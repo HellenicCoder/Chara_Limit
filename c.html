@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!-- Coding by CodingNepal || www.codingnepalweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title> Character Limit using|| Yahya Nebgui</title>
+    <link rel="stylesheet" href="c.css" />
+    <script src="https://kit.fontawesome.com/6829867d24.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+     <div class="input-box">
+        <textarea placeholder="Add to your title" required></textarea>
+        <span class="title">title</span>
+        <div class="characters">
+            <span class="signal_num">0</span>
+            <span class="limit_num">/100</span>
+        </div>
+     </div>
+
+     <script>
+            
+        let inputBox = document.querySelector(".input-box"),
+        textarea = inputBox.querySelector("textarea"),
+        signalNum = inputBox.querySelector(".signal_num");
+
+        textarea.addEventListener("keyup", () => {
+            let valLength = textarea.value.length;
+            signalNum.innerText = valLength;
+            (valLength > 0) ? inputBox.classList.add("active") : inputBox.classList.remove("active");
+            (valLength > 100) ? inputBox.classList.add("error") : inputBox.classList.remove("error");
+            console.log(valLength);
+        })
+     </script>
+  </body>
+</html>
